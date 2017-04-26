@@ -3,18 +3,25 @@ $(document).ready(function(){
     
     $('#prototype').click(function(e){
         e.preventDefault();
-        $('#about').removeClass('active');
+        $('#contact, #about').removeClass('active');
         $('#prototype').addClass('active');
-        $('.about').addClass('hidden');
+        $('.contact, .about').addClass('hidden');
         $('.prototype').removeClass('hidden');
     });
     
     $('#about').click(function(e){
         e.preventDefault();
         $('#about').addClass('active');
-        $('#prototype').removeClass('active');
+        $('#prototype, #contact').removeClass('active');
         $('.about').removeClass('hidden');
-        $('.prototype').addClass('hidden');
+        $('.prototype, .contact').addClass('hidden');
     });
     
+    $('#contact').click(function(e){
+        e.preventDefault();
+        $('#contact').addClass('active');
+        $('#prototype, #about').removeClass('active');
+        $('.contact').removeClass('hidden');
+        $('.about, .prototype').addClass('hidden');
+    });   
 });
