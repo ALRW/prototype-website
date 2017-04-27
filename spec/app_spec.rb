@@ -14,4 +14,14 @@ describe 'Prototype App' do
             expect(last_response.status).to eq 200
         end
         
+        it 'displays the company name' do
+            get '/'
+            expect(last_response.body).to include "Prototype Inc."
+        end
+        
+        it 'displays the correct content' do 
+            get '/'
+            expect(last_response.body).to include "Home of the World's Best Prototypes"
+        end
+        
 end
