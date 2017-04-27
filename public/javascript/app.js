@@ -1,27 +1,23 @@
 /* global $ */
 $(document).ready(function(){
     
-    $('#prototype').click(function(e){
-        e.preventDefault();
-        $('#contact, #about').removeClass('active');
-        $('#prototype').addClass('active');
-        $('.contact, .about').addClass('hidden');
-        $('.prototype').removeClass('hidden');
-    });
+    function eventHandler(event){
+        event.preventDefault();
+        var arr = ['contact', 'about', 'prototype'];
+        arr.forEach(function(item){
+            if(event.currentTarget.id === item){
+                $('#' + item).addClass('active');
+                $('.' + item).removeClass('hidden');
+            } else {
+                $('#' + item).removeClass('active');
+                $('.' + item).addClass('hidden');
+            }
+        });
+    }
     
-    $('#about').click(function(e){
-        e.preventDefault();
-        $('#about').addClass('active');
-        $('#prototype, #contact').removeClass('active');
-        $('.about').removeClass('hidden');
-        $('.prototype, .contact').addClass('hidden');
-    });
+    $('#prototype').click(eventHandler);
     
-    $('#contact').click(function(e){
-        e.preventDefault();
-        $('#contact').addClass('active');
-        $('#prototype, #about').removeClass('active');
-        $('.contact').removeClass('hidden');
-        $('.about, .prototype').addClass('hidden');
-    });   
+    $('#about').click(eventHandler);
+    
+    $('#contact').click(eventHandler);   
 });
