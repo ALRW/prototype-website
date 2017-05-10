@@ -1,10 +1,11 @@
 /* global $ */
 $(document).ready(function(){
     
+    var tabs = ['contact', 'about', 'prototype'];
+    
     function eventHandler(event){
         event.preventDefault();
-        var arr = ['contact', 'about', 'prototype'];
-        arr.forEach(function(item){
+        tabs.forEach(function(item){
             if(event.currentTarget.id === item){
                 $('#' + item).addClass('active');
                 $('.' + item).removeClass('hidden');
