@@ -23,5 +23,10 @@ describe 'Prototype App' do
         get '/'
         expect(last_response.body).to include "Home of the World's Best Prototypes"
     end
+    
+    it 'displays the mail link with the correct address' do
+        get '/'
+        expect(last_response.body).to include "<li id=\"mail\"><a href=\"mailto:example@example.com\"><span class=\"glyphicon glyphicon-envelope\"></span></a></li>"
+    end
         
 end
