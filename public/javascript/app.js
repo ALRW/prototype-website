@@ -1,7 +1,7 @@
 /* global $ */
 $(document).ready(function(){
     
-    var tabs = ['contact', 'about', 'prototype'];
+    var tabs = ['about', 'prototype'];
     
     function eventHandler(event){
         event.preventDefault();
@@ -20,5 +20,4 @@ $(document).ready(function(){
     
     $('#about').click(eventHandler);
     
-    $('#contact').click(eventHandler);   
 });
