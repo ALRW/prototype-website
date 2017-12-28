@@ -19,6 +19,7 @@
       <ul class="nav navbar-nav">
         <li id="about" class="active"><a href="#">About</a></li>
         <li id="prototype"><a href="#">Prototypes</a></li>
+        <li id="users"><a href="#">Users</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li id="mail"><a href="mailto:example@example.com"><span class="glyphicon glyphicon-envelope"></span></a></li>
@@ -42,14 +43,27 @@
             </p>
             <p>This website showcases some of the most prototypical of prototypes.</p>
           </div>
-          
+
           <div class="prototype hidden">
             <h2>Our Top Secret Prototype</h2>
             <img src="https://raw.githubusercontent.com/ALRW/dayAsADev/master/images/tsPrototype.png" class="img-responsive img-rounded"></img>
           </div>
-          
+
+          <div class="users hidden">
+            <h2>Users</h2>
+            <div class="card-deck">
+            <% @users.each do |user| %>
+                    <div class="card">
+                            <div class="card-body">
+                                    <h2><%= user %></h2>
+                            </div>
+                    </div>
+
+            <% end %>
            
-          
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="col-md-3"></div>
