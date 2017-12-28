@@ -99,9 +99,17 @@ users = [
   }
 ]
 
-
+def filter_users(users)
+  results = []
+  users.each do |user|
+    if user['subscriptionPaid'] || user['lifetimeMember'] 
+      results.push user
+    end
+  end
+  results
+end
 
 get '/' do
-  @users = users
+  @users = filter_users(users)
   erb :index
 end
