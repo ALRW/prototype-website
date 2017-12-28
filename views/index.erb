@@ -51,12 +51,16 @@
 
           <div class="users hidden">
             <% @users.each do |user| %>
+                    <% if user['subscriptionPaid'] || user['lifetimeMember'] %>
                     <div class="media">
+                    <% else %>
+                    <div class="media" style="background:red">
+                    <% end %>
                             <div class="media-left">
                                     <img class="media-object" src="<%= user['avatar'] %>">
                             </div>
                             <div class="media-body">
-                                    <h2 class="media-heading"><%= user['name'] %></h2>
+                                    <h2 class="media-heading"><%= user['name'] %> - Rank: <%= user['level'] %></h2>
                                     <p><%= user['description'] %></p>
                             </div>
                     </div>
