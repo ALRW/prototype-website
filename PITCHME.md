@@ -1,4 +1,4 @@
----?image=presentation/Code101.png&size=auto 90% 90%
+---?image=presentation/dd.png&size=auto 90% 90%
 
 ---?image=presentation/algorithms.png&size=auto 90% 90%
 
