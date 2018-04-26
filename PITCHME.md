@@ -66,4 +66,37 @@ def sort_by_rank(users)
 end
 ```
 
+---
+
+```ruby
+# Merge sort: another intuitive divide and conquer algorithm for sorting that is more efficient
+def merge_sort(array)
+  # An array of one is by default sorted
+  if array.length <= 1
+    array
+  else
+    # Define the mid point
+    mid = (array.length / 2).floor
+    # Carry out merge sort on the left side
+    left = merge_sort(array[0..mid-1])
+    # Carry out merge sort on the right side
+    right = merge_sort(array[mid..array.length])
+    # Bring the two together and return the sorted array
+    merge(left, right)
+  end
+end
+
+# Merge is where the actual comparison between two items takes place
+def merge(left, right)
+  if left.empty?
+    right
+  elsif right.empty?
+    left
+  elsif left[0] < right[0]
+    [left[0]] + merge(left[1..left.length], right)
+  else
+    [right[0]] + merge(left, right[1..right.length])
+  end
+end
+```
 ---?image=presentation/questions.png&size=auto 90% 90%
